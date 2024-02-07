@@ -1,12 +1,70 @@
-a = 1,2,3               #tuples
-a = [1,2,3]             #list
-a = {1:'a',2:'b',3:'c'} #dictionary
+Package/Library:
+    * Module 1
+    * Module 2
+        * Class 1
+        * Class 2
+        * Function 1
+        * Function 2
 
+Object = Instance
+Attributes = Properties
+
+Function vs Method
+    function_name()
+    object.method_name()
 
 
 a = 'Hello' #str
 a = 1       #int
 a = 1.232   #float
+a = True        #Boolean
+
+x//y #Целая часть
+x%y  #Остаток
+x**y #X in the power of Y
+
+a = input('What is your name?')
+print(a)
+
+
+## List, Dictionary, Tuples
+
+    a = 1,2,3               #tuples
+    a = [1,2,3]             #list
+    a = {1:'a',2:'b',3:'c'} #dictionary
+
+    #Additions:
+        #tuplet
+            t = t + (x)
+
+        #list
+            append(x)
+            extend(x)
+            insert(i,x)
+
+        #dictionary
+            d[x] = 1
+
+
+    #Deletion:
+        #tuple
+            #immutable
+        #list
+            l.remove(x)
+            del l(x)
+        #dictionary
+            ###
+
+
+
+    #Update:
+        #tuple
+            #immutable
+        #list
+            l[i] = x
+        #dictionary
+            d[k] = 1
+
 
 
 
@@ -14,62 +72,61 @@ print (x, end = '\n') #seperate by "seperate line"
 
 
     
-#Range [start_incl,end_excl),step)
-range(5,10)         #5,6,7,8,9
-range(5,10,2)       #5,7,9
-
-
-
-
-
 ## Text / String manipulation
-#Conversion
-" Hello ".strip()
-" Hello ".ltrip()
-" Hello ".rtrip()
+    #Conversion
+    " Hello ".strip()
+    " Hello ".ltrip()
+    " Hello ".rtrip()
 
-"Hello".upper()
-"Hello".lower()  
+    "Hello".upper()
+    "Hello".lower()  
 
-" Hello ".count("e")
+    " Hello ".count("e")
 
-"Hello ".replace(" "," Sarkhan") #only for string
+    "Hello ".replace(" "," Sarkhan") #only for string
 
-"Sarkhan Azer Nijat".split() #splits STRING to LIST []
-"Sarkhan;Azer;Nijat".split(";") #splits str to the list []
-";".join(["Sarkhan","Azer","Nijat"])  #Joins LIST to STRING
-
-
-#Boolean
-"Hello".endswith("lo")   #true/false
-"Hello".isnumeric() #true/false
-"Hello".isalpha() #true/false
+    "Sarkhan Azer Nijat".split() #splits STRING to LIST []
+    "Sarkhan;Azer;Nijat".split(";") #splits str to the list []
+    ";".join(["Sarkhan","Azer","Nijat"])  #Joins LIST to STRING
 
 
-'Aren\#\'t you hungry'
-#\ ignores next logo
+    #Boolean
+    "Hello".endswith("lo")   #true/false
+    "Hello".isnumeric() #true/false
+    "Hello".isalpha() #true/false
 
 
+    'Aren\#\'t you hungry'
+    # '\' ignores next character
 
+
+break       #breakes the loop
+continue    #skips only 1 loop
+
+#manipulation with Tuple
+    Immutable / no manipulation;
+    t = t +(x,) #adds values to the tuples
+    #cannot be modified, or deleted
+    t.count('x')
 
 #manipulation with DICTIONARY
+    print(d[k])
 
-for key,value in A_Dict.items():
-    print("{} has {} unique letters".format(key,value))
+    for key,value in A_Dict.items():
+        print("{} has {} unique letters".format(key,value))
 
-
-
-dict.get(key, default)          # Returns the element corresponding to key, or default if it's not present
-dict.keys()                     # Returns a sequence containing the keys in the dictionary
-dict.values()                   # Returns a sequence containing the values in the dictionary
-dict.items()
-
-dict.update(other_dictionary)   # Updates the dictionary with the items coming from the other dictionary. Existing entries will be replaced; new entries will be added.
-dict.clear()                    # Removes all the items of the dictionary
+    dict.get(key, default)          # Returns the element corresponding to key, or default if it's not present
+    dict.keys()                     # Returns a sequence containing the keys in the dictionary
+    dict.values()                   # Returns a sequence containing the values in the dictionary
+    dict.items()
+    dict.update(other_dictionary)   # Updates the dictionary with the items coming from the other dictionary. Existing entries will be replaced; new entries will be added.
+    dict.clear()                    # Removes all the items of the dictionary
 
 
 
 #LIST manipulation
+l[i] = x #update
+
 fruits = ['alma','armud']
 fruits.append('qarpiz')             # only single item
 fruits.extend(['Dilbar','Gular'])   # several items
@@ -88,10 +145,7 @@ fruits.count('x')                   #counts
 
 
 
-#tuples
-t = t +(x,) #adds values to the tuples
-#cannot be modified, or deleted
-t.count('x')
+
 
 
 
@@ -154,6 +208,12 @@ eq(b=3,c=2,a=10)
 #1) FOR LOOPS
 for x in list:
 	print(x, end = ' ')
+
+
+
+for x in range (0,100):
+    if x %3 == 0:
+        print(x)
 
 #or
 z = [x for x in range (0,100) if x %3==0]
@@ -285,8 +345,6 @@ mult_table(1,20)
 
 
 
-
-
 # Advance WHILE loop
 #1
 x=0
@@ -356,8 +414,6 @@ def numb_len(x):
         count+=1
         x= x/10
     print("length is :"+str(count))
-
-
 
 
 
@@ -459,14 +515,207 @@ print(smaller, bigger)
 
 
 
-
-
 #enumerate indexing
 winners = ['Sarkhan','Javid','Elnur']
 for index,y in enumerate(winners):
     print('{} - {}'.format(index+1,y))
-    
 
 
+
+
+# Try Except Exit Finally:
+
+try:
+  # Simulate reading a file
+  with open("data.txt", "r") as f:
+    data = f.read()
+    if not data:
+      raise ValueError("Empty file")
+except FileNotFoundError:
+  print("File not found.")
+  exit(1)  # Signal "file not found" error
+except ValueError:
+  print("Invalid file content.")
+  exit(2)  # Signal "invalid data" error
+finally:
+  # Assuming there's a file object, ensure it's closed
+  if f:
+    f.close()
+
+
+
+while True:
+    x = input('Done?')
+    if x == 'Done':
+        break # breaks while loop
+    print(x)
+
+
+# а если continue:
+while True:
+    x = input('Done?')
+    if x == 'Done':
+        continue # goes back to while loop
+    print(x)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------
+df.mean()  #mean for each column
+df.sum()   #sum for each column
+df.mean(axis=1) # mean for each row
+
+df.round(2) #rounds values of table
+
+df['col1'].value_counts()
+'../folder/file.csv' #location of the file
+
+read_csv('filename.csv', 
+
+#if 0 then no index column, default None
+index_col = 0 
+
+#reads the column format as date
+parse_dates = ['date_column1','date_column2']
+
+
+)
+
+
+
+
+filename.shape #returns tuple of number of rows and columns
+filename.size #returns number of data (rows*columns)
+len(filename) #number of rows
+filename.dtypes #returns list of columns and its format, format is pandas.series
+filename.info() #prints overal info of the table, columns, its format, notnull count
+filename.info(memory_usage = 'deep') #prints
+
+
+filename.index #returns Index; pandas.Index
+filename.columns #returns Index; pandas.Index
+filename.values #returns Array; numpy.ndarray
+
+filename.setindex('columnname1') #returns dataset
+
+pd.get_option('display.max_columns') #there is more commands, see documentation
+pd.set_option('display.max_columns', 22) #it works only for thsi session 
+
+file.index #returns kind of the index
+
+
+filter = filt1 & filt2      #and, intersect
+filter = filt1 | filt2      #or, union
+filter = ~(filt1 & filt2)   #not, C
+
+f_list = ['apple','xiaomi']
+filt = file['column_name'].isin(f_list)
+file[filt]
+
+col = file['column_name_1']
+file['column_name_1'].between(0,10) # 0 and 10 inclusive
+
+file['column_name_1'].isna
+file['column_name_1'].isnull
+
+min_count = 1000
+file.query("not (col1>1000 and col2<50) and col3>@min_count and events in ['snow','rain']")
+
+file.at[a,b]  #return only 1 cell of data, more optimized than loc
+file.iat[a,b] #return only 1 cell of data, more optimized than iloc
+
+
+
+
+
+#working with files:
+
+    #files work as OPEN-USE-CLOSE principle
+    file = open('data.txt')
+    print(file.readline()) # reads first line
+    print(file.readline()) # if you run 2nd time then it reads 2nd line
+    print(file.read()) 	   # read the file till the end after where you left
+    file.close()
+
+    print(file.readlines()) #reads all lines (format: list)
+
+    # you need to close the file as:
+    # 1. you could not modify it while it is open in python
+    # 2. using 1st logic other processes could not use it
+    # In order to solve it, use with:
+
+
+
+    checked_out=["Andrea", "Manuel", "Khalid"]
+    temp_list=[] #guests.txt
+
+    with open("guests.txt", 'r') as guests:
+        for g in guests:
+            temp_list.append(g.strip())
+
+    with open("guests.txt", 'w') as guests:
+        for name in temp_list:
+            if name not in checked_out:
+                guests.write(name + "\n") # writes lines to file
+
+
+
+    with open('data.txt') as file:
+
+    open('data.txt', 'r') 
+    # r - read only, error if not exists
+    # w - immediately overwrite the file or create new if not exists
+    # a - append, add new lines to existing file
+    # r+ - read and write  
+
+
+
+
+
+#Regexp
+    a. c  - any character
+    ^abc -  if  words starts with abc
+    abc$ - if word ends with abc
+    a?bc - a is optional
+    X* - means several repetitions of X characters, even if zero repetition (x is an example)
+    X+ -  matches one or more occurrences of X
+
+    [Pp] - upper and lower case 'P'
+    [a-z] - only lowercase
+    [^a] - except a
+    \w* - exists any alpha numerical character
+    \d* - digits
+    \s* - space,tab.newline
+    \b* - word boundaries
+
+
+    #Patterns
+    '^(\w*), (\w*)$'      #'Sarkhan, Shirinov'
+
+    #if we want to add several symbols in groups then:
+    '^([\w -\.]*), ([\w -\.]*)$'      #'Sarkhan, Shirinov F.'
+
+
+
+
+
+
+result = re.search(pattern,text) #find first pattern in text
+re.findall(pattern,text) #find all pattern in text in form of List
+
+result[0] # provide results of the groups (in pattern) in form of Tuples
+result[1] # provide FIRST result of the groups (in pattern)
+result[2] # provide SECOND result of the groups (in pattern)
 
 
