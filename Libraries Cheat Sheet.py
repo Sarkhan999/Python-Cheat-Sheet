@@ -71,3 +71,10 @@
         writer = csv.DictWriter(file, fieldnames = keys)
         writer.writeheader()
         writer.wrtierows(users)
+
+
+
+#Pandas
+pd.read_csv('path', sep|delimeter = ',', header = None | 0, usecols = all | ['Col1','Col2'] , index_col = None | 0, names = ['CIF','FIN','Full_Name'])
+df.to_csv('path', index = True|False, header = True|False | 0, sep|delimeter = ',',  usecols = all | ['Col1','Col2'] , index_col = None | 0, names = ['CIF','FIN','Full_Name'])
+
